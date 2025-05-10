@@ -1,0 +1,86 @@
+/* Thiết lập các thuộc tính cơ bản cho trang */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Định dạng container của form thanh toán */
+.giaodienThanhToan {
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Tiêu đề của form thanh toán */
+#tieuDeThanhToan {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Các nhóm trường input trong form */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Nhãn cho các trường thông tin */
+.form-group label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Các trường input */
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+/* Các trường input khi focus */
+.form-group input:focus {
+    border-color: #007BFF;
+    background-color: #fff;
+    outline: none;
+}
+
+/* Nút thanh toán */
+.btn-submit {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Hiệu ứng khi hover vào nút thanh toán */
+.btn-submit:hover {
+    background-color: #218838;
+}
+
+/* Đảm bảo các input không bị dính vào nhau */
+input[type="text"], input[type="email"] {
+    margin-bottom: 10px;
+}
+
+/* Đảm bảo khoảng cách cho các form */
+input[type="submit"] {
+    margin-top: 20px;
+}
