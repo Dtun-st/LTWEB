@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Giỏ hàng</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Giỏ hàng của bạn</h1>
+  </header>
+
+  <div class="cart">
+    <div id="cartItems"></div>
+    <div id="totalPrice"></div>
+    <button onclick="checkout()">Thanh toán</button>
+  </div>
+
+  <footer>
+    <a href="index.html">Tiếp tục mua sắm</a>
+  </footer>
+
+  <script>
+    function displayCart() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const cartItemsContainer = document.getElementById("cartItems");
+      const totalPriceContainer = document.getElementById("totalPrice");
+      
+      if (cart.length === 0) {
+        cartItemsContainer.innerHTML = "<p>Giỏ hàng trống.</p>";
+        totalPriceContainer.innerHTML = "";
+        return;
+      }
+
+      let totalPrice = 0;
+      cartItemsContainer.innerHTML = cart.map(item => {
+        totalPrice += item.price * item.quantity;
+        return `
+          <div class="cart-item">
+            <img src="${item.image}" alt="${item.name}">
+            <p>${item.name}</p>
+            <p>${item.quantity} x ${item.price.toLocaleString()}₫</p>
+          </div>
+        `;
+      }).join("");
+
+      totalPriceContainer.innerHTML = `<p>Tổng tiền: ${totalPrice.toLocaleString()}₫</p>`;
+    }
+
+    function checkout() {
+      alert("Chức năng thanh toán sẽ được triển khai sau!");
+    }
+
+    displayCart();
+  </script>
+</body>
+</html>
