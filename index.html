@@ -21,23 +21,17 @@
   </div>
 </header>
 
-
- <div class="banner-slider">
-  <div class="slides">
-    <img src="images/banner1.jpg" alt="Banner 1">
-    <img src="images/banner2.jpg" alt="Banner 2">
-  </div>
-   <button class="prev">&#10094;</button>
-  <button class="next">&#10095;</button>
+<div class="custom-slider">
+  <div id="banner-slide"></div>
 </div>
+
+
 
   <!-- Danh mục sản phẩm -->
   <section class="categories">
     <h2>Danh mục sản phẩm</h2>
     <div class="category-list">
       <div class="category-item">Tivi</div>
-      <div class="category-item">Điều hòa</div>
-      <div class="category-item">Máy giặt</div>
       <div class="category-item">Tủ lạnh</div>
       <div class="category-item">Laptop</div>
       <div class="category-item">Điện thoại</div>
@@ -54,30 +48,43 @@
       <p>Giá: 8.000.000đ</p>
     </div>
 
-    <div class="product-card">
-      <img src="images/sp2.jpg" alt="Điều hòa LG Inverter">
-      <h3>Điều hòa LG Inverter</h3>
-      <p>Giá: 6.500.000đ</p>
-    </div>
 
      <div class="product-card">
       <img src="images/sp3.jpg" alt="Tủ lạnh Toshiba 180L">
       <h3>Tủ lạnh Toshiba 180L</h3>
       <p>Giá: 4.990.000đ</p>
     </div>
-
-    <div class="product-card">
-      <img src="images/sp4.jpg" alt="Máy giặt Panasonic 9kg">
-      <h3>Máy giặt Panasonic 9kg</h3>
-      <p>Giá: 7.300.000đ</p>
-    </div>
-
     <div class="product-card">
       <img src="images/sp5.jpg" alt="Laptop Acer Aspire 5">
       <h3>Laptop Acer Aspire 5</h3>
       <p>Giá: 12.500.000đ</p>
     </div>
 
+  </div>
+</section>
+
+<section class="product-section sale-section">
+  <h2>Sản phẩm khuyến mãi</h2>
+  <div class="product-grid">
+    <div class="product-card sale">
+  <span class="discount-badge">-23%</span>
+  <img src="images/sp6.jpg" alt="Tủ lạnh Samsung">
+  <h3>Tủ lạnh Samsung 230L</h3>
+  <p class="old-price">Giá gốc: 9.000.000đ</p>
+  <p class="new-price">Giá khuyến mãi: 6.900.000đ</p>
+  <button class="buy-btn">Mua ngay</button>
+</div>
+
+
+    <div class="product-card sale">
+      <img src="images/sp7.jpg" alt="Điện thoại iPhone">
+      <h3>iPhone 13 Pro Max</h3>
+      <p class="old-price">Giá gốc: 27.000.000đ</p>
+      <p class="new-price">Giá khuyến mãi: 23.500.000đ</p>
+      <button class="buy-btn">Mua ngay</button>
+    </div>
+
+    <!-- Thêm sản phẩm khuyến mãi khác tại đây -->
   </div>
 </section>
 
@@ -116,29 +123,33 @@
     </div>
   </footer>
 <script>
-  const slides = document.querySelector('.slides');
-  const images = document.querySelectorAll('.slides img');
-  const prevBtn = document.querySelector('.prev');
-  const nextBtn = document.querySelector('.next');
-  let index = 0;
-  const total = images.length;
+  const bannerImages = [
+    "images/banner1.jpg",
+    "images/banner2.jpg"
+  ];
+
+  let current = 0;
+  const bannerDiv = document.getElementById("banner-slide");
 
   function showSlide(i) {
-    index = (i + total) % total;
-    slides.style.transform = `translateX(-${index * 100}%)`;
+    current = (i + bannerImages.length) % bannerImages.length;
+    bannerDiv.style.backgroundImage = `url(${bannerImages[current]})`;
   }
 
-  nextBtn.addEventListener('click', () => {
-    showSlide(index + 1);
-  });
+  function nextSlide() {
+    showSlide(current + 1);
+  }
 
-  prevBtn.addEventListener('click', () => {
-    showSlide(index - 1);
-  });
+  function prevSlide() {
+    showSlide(current - 1);
+  }
 
-  // Tự động chuyển slide mỗi 4 giây
+  // Gọi lần đầu để hiển thị ảnh đầu tiên
+  showSlide(0);
+
+  // Tự động chạy nếu bạn muốn:
   setInterval(() => {
-    showSlide(index + 1);
+    nextSlide();
   }, 4000);
 </script>
 
