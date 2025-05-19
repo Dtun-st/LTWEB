@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/toast.css">
+    <link rel="stylesheet" href="./css/confirmPopup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+
+</head>
+<body>
+    
+    <button id="btn">click </button>
+    <button class="btn-popup">pop-up</button>
+    <div id="toastBox"></div>
+    <!-- type="module" để có thể import function từ file .js khác -->
+    <script type="module" src="./script/login.js"></script>
+
+
+    <!-- cách để sử dụng:
+     -toast message: import 2 cái này
+     <link rel="stylesheet" href="./css/toast.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+
+     thêm thẻ div: <div id="toastBox"></div> để chứa các toast message
+     khi gắn script để xử lý nhớ thêm type=module để import hàm showToast từ toast.js:
+        import { showToast } from './toast.js';
+        showToast('Vui lòng nhập đầy đủ thông tin', 'error');
+      
+    -confirm popup: import     <link rel="stylesheet" href="./css/confirmPopup.css">
+        tương tự như trên nhớ thêm thêm type=module
+
+        trong file js: show pop up khi nhấn nút
+        import { showConfirmPopup } from './confirmPopup.js';
+
+        let popup=document.querySelector('.btn-popup');
+
+        popup.addEventListener('click',()=>{
+            showConfirmPopup(
+                        'Xác nhận',  // Tiêu đề
+                        'Bạn có chắc chắn muốn đăng xuất không?',  // Nội dung
+                        () => {
+                            showSuccessToast()
+                        }
+                    );
+        })
+      
+        -->
+</body>
+</html>
