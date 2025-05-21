@@ -12,6 +12,9 @@ body {
 
   background-color: #f9f9f9; /* xanh nhạt dịu mắt, bạn có thể đổi */
 }
+body :hover {
+  cursor: pointer;
+}
 
 
 
@@ -46,6 +49,45 @@ header {
   cursor: pointer;
 }
 
+.profile-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Hiển thị khi hover */
+.profile-dropdown:hover .dropdown-content {
+  display: block;
+}
 
 .logo {
   font-size: 24px;
@@ -85,9 +127,37 @@ nav a:hover {
 }
 
 
+.categories {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.category-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px; /* khoảng cách giữa các mục */
+}
+
+.category-item {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+}
+
+.category-item i {
+  margin-right: 8px;
+  font-size: 18px;
+}
+.category-item:hover {
+  color: #3183e1;
+  transition: color 0.3s ease;
+}
 
 /* Categories */
-.categories {
+/* .categories {
   padding: 20px;
   background:#3183e1; 
    text-align: center;
@@ -120,7 +190,7 @@ nav a:hover {
   transform: scale(1.05);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   background-color: #ffffff;
-}
+} */
 
 
 /* Featured Products */

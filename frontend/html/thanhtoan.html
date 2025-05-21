@@ -2,6 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thanh Toán</title>
     <link rel="stylesheet" href="../frontend/css/thanhtoan.css">
 </head>
@@ -29,20 +30,6 @@
         </form>
     </div>
 
-    <script>
-        // Xử lý form thanh toán
-        document.getElementById("paymentForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Ngừng hành động mặc định của form
-
-            const fullName = document.getElementById("fullName").value;
-            const email = document.getElementById("email").value;
-            const phone = document.getElementById("phone").value;
-            const address = document.getElementById("address").value;
-
-            // Xử lý thanh toán (ví dụ: gửi thông tin thanh toán đến backend)
-            alert(`Đặt hàng thành công! \nTên: ${fullName} \nEmail: ${email} \nSố điện thoại: ${phone} \nĐịa chỉ: ${address}`);
-            // Bạn có thể gửi thông tin này đến backend hoặc xử lý thêm tùy theo yêu cầu.
-        });
-    </script>
+    <script src="../frontend/js/thanhtoan.js"></script>
 </body>
 </html>
