@@ -1,0 +1,89 @@
+/* Toàn trang */
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: linear-gradient(to bottom, #e0f7fa, #fff);
+  margin: 0;
+  padding: 30px;
+}
+
+/* Khung thêm sản phẩm */
+.add-product-container {
+  max-width: 600px;
+  margin: auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+  text-align: center;
+  color: #3183e1;
+  margin-bottom: 25px;
+}
+
+/* Nhóm input */
+.form-group {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #444;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+  border-color: #3183e1;
+  outline: none;
+}
+
+.btn-submit {
+  width: 100%;
+  background: #3183e1;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 10px;
+}
+
+.btn-submit:hover {
+  background: #226ac3;
+}
+
+/* Kết quả sản phẩm thêm */
+.preview-area {
+  margin-top: 35px;
+  padding: 20px;
+  border: 1px solid #d0d0d0;
+  border-radius: 10px;
+  background: #fefefe;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.preview-area img {
+  margin-top: 15px;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}

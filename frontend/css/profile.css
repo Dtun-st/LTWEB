@@ -1,28 +1,31 @@
+/* Toàn trang */
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f0f2f5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
   margin: 0;
-}
-
-.container {
-  background-color: #fff;
   padding: 40px;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
-  width: 500px;
-  max-width: 90%;
+}
+
+/* Khung profile chính */
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Tiêu đề */
+.container h2 {
   text-align: center;
-}
-
-h2 {
   margin-bottom: 30px;
-  font-size: 28px;
+  color: #3183e1;
+  font-size: 26px;
 }
 
+/* Avatar */
 .avatar-container {
   display: flex;
   flex-direction: column;
@@ -31,99 +34,115 @@ h2 {
 }
 
 .avatar {
-  position: relative;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
 }
 
 .avatar img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border: 4px solid #ccc;
-  cursor: default;
-  transition: border-color 0.3s;
-}
-
-.avatar.editable img {
-  cursor: pointer;
-}
-
-.avatar.editable img:hover {
-  border-color: #007bff;
 }
 
 #removeAvatarBtn {
   margin-top: 10px;
-  padding: 6px 16px;
-  font-size: 14px;
-  background-color: #dc3545;
+  padding: 6px 14px;
+  background-color: #e53935;
   color: white;
   border: none;
   border-radius: 6px;
+  font-size: 14px;
   cursor: pointer;
-  display: none;
 }
 
 #removeAvatarBtn:hover {
-  background-color: #c82333;
+  background-color: #c62828;
 }
 
-button {
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: 500;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  margin: 10px 8px 0;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-button[type="submit"] {
-  background-color: #28a745;
-}
-
-button[type="submit"]:hover {
-  background-color: #1e7e34;
-}
-
+/* Form */
 .form-group {
-  margin-bottom: 20px;
-  text-align: left;
+  margin-bottom: 18px;
 }
 
 label {
   display: block;
-  font-weight: 600;
-  margin-bottom: 5px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #444;
 }
 
 span {
   display: block;
-  font-size: 18px;
   color: #333;
+  margin-bottom: 4px;
+  font-size: 15px;
 }
 
-input {
+input[type="text"],
+input[type="email"] {
   width: 100%;
-  padding: 10px 14px;
-  font-size: 16px;
-  margin-top: 5px;
+  padding: 10px 12px;
   border: 1px solid #ccc;
   border-radius: 6px;
+  font-size: 15px;
   display: none;
 }
 
-input[readonly] {
-  background-color: #f0f0f0;
+input:focus {
+  border-color: #3183e1;
+  outline: none;
 }
 
-#roleInput {
-  cursor: not-allowed;
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 15px;
+  transition: background 0.3s;
+}
+
+#editBtn {
+  background-color: #3183e1;
+  color: white;
+}
+
+#editBtn:hover {
+  background-color: #226ac3;
+}
+
+#saveBtn {
+  background-color: #43a047;
+  color: white;
+}
+
+#saveBtn:hover {
+  background-color: #388e3c;
+}
+
+#cancelBtn {
+  background-color: #9e9e9e;
+  color: white;
+}
+
+#cancelBtn:hover {
+  background-color: #757575;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }

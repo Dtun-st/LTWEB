@@ -1,14 +1,25 @@
-// Xử lý form thanh toán
-document.getElementById("paymentForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Ngăn hành vi mặc định gửi form
+document.getElementById("paymentForm").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-    const fullName = document.getElementById("fullName").value;
-    const email = document.getElementById("email").value;
-    const phone = document.getElementById("phone").value;
-    const address = document.getElementById("address").value;
+  const name = document.getElementById("fullName").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const address = document.getElementById("address").value.trim();
 
-    // Thông báo thông tin đặt hàng
-    alert(`Đặt hàng thành công!\nTên: ${fullName}\nEmail: ${email}\nSố điện thoại: ${phone}\nĐịa chỉ: ${address}`);
+  if (!name || !email || !phone || !address) {
+    alert("Vui lòng nhập đầy đủ thông tin!");
+    return;
+  }
 
-    // Tùy chọn: gửi dữ liệu về server qua fetch/ajax nếu cần
+  if (!/^\d{10,11}$/.test(phone)) {
+    alert("Số điện thoại không hợp lệ!");
+    return;
+  }
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    alert("Email không hợp lệ!");
+    return;
+  }
+
+  alert(`✅ Thanh toán thành công!\nTên: ${name}\nEmail: ${email}\nSĐT: ${phone}\nĐịa chỉ: ${address}`);
 });
