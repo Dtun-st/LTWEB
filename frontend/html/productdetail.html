@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chi tiết sản phẩm</title>
+  <link rel="stylesheet" href="../css/productdetail.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Chi tiết sản phẩm</h1>
+  </header>
+
+  <main class="information-product">
+    <div class="row information-content">
+      <div class="information-content-left">
+        <img src="/images/sp1.jpg" alt="Ảnh sản phẩm" class="information-content-left-pic">
+      </div>
+
+      <div class="information-content-right">
+        <div class="information-content-right-fi">
+          <div class="information-content-right-name">
+            <h2 id="product-name">Tên sản phẩm</h2>
+          </div>
+          <div>
+            <h4 id="product-stock">Tình trạng: Còn hàng</h4>
+          </div>
+          <div class="information-content-right-price">
+            <p id="product-price" style="color:red">0<sup>đ</sup></p>
+          </div>
+          <div class="information-content-right-figure">
+            <p style="font-weight: bold;">Số lượng còn: <span id="product-quantity">0</span></p>
+          </div>
+
+          <form id="buy-form">
+            <div class="information-content-right-button">
+              <input id="quantityInput" type="number" name="quantity" min="1" value="1" required />
+              <button type="submit" class="information-content-right-button-first">
+                <p>Mua ngay</p>
+              </button>
+              <button type="button" class="information-content-right-second">
+                <i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="information-content-right-describe">
+          <h3>Giới thiệu sản phẩm:</h3>
+          <p id="product-description">Mô tả chi tiết về công dụng và tính năng...</p>
+        </div>
+
+        <div class="information-content-right-specs">
+          <h3>Thông số kỹ thuật:</h3>
+          <p id="product-specs">Đang cập nhật...</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="./chitiet.js"></script>
+</body>
+
+</html>

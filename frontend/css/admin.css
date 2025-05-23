@@ -1,0 +1,105 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+h1, h2 {
+    color: #2c3e50;
+}
+
+form {
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="file"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 8px 10px;
+    margin: 8px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    resize: vertical;
+}
+
+form textarea {
+    min-height: 80px;
+}
+
+form button {
+    background-color: #27ae60;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #219150;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 900px;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+table th {
+    background-color: #2980b9;
+    color: white;
+    font-weight: 600;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f6fb;
+}
+
+table tr:hover {
+    background-color: #e8f0fe;
+}
+
+table img {
+    border-radius: 4px;
+}
+
+form input[type="hidden"] {
+    display: none;
+}
+
+button[style] {
+    background: none;
+    border: none;
+    font-size: 18px;
+    line-height: 1;
+    color: #e74c3c;
+    padding: 0;
+}
+
+button[style]:hover {
+    color: #c0392b;
+}
