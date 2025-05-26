@@ -40,6 +40,12 @@ CREATE TABLE users (
     role ENUM('admin', 'user') DEFAULT 'user'
 );
 
+CREATE TABLE authentication(
+    email VARCHAR(255),
+    code VARCHAR(6),
+    expires_at DATETIME
+);
+
 INSERT INTO users (username, password, email, role) VALUES
 ('admin', MD5('admin123'), 'admin@gmail.com', 'admin'),
 ('user1', MD5('123456'), 'user1@gmail.com', 'user');

@@ -5,26 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="./css/register.css">
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/toast.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
 </head>
 <body>
     <div class="blob"></div>
     <div class="wrapper">
-        <form method="POST" action="register.php">
+        <form method="POST" action="../../backend/register.php">
             <h2>Đăng ký</h2>
             <div class="input-box">
                 <span class="icon">
                     <ion-icon name="person"></ion-icon>
                 </span>
-                <input type="text" required placeholder="Tên tài khoản" title="Tên tài khoản">
+                <input type="text" required title="Tên tài khoản" name="username">
                 <label>Tên tài khoản</label>
             </div>
 
             <div class="input-box">
                 <span class="icon">
-                    <ion-icon name="person"></ion-icon>
+                    <ion-icon name="mail"></ion-icon>
                 </span>
-                <input type="text" required placeholder="Email" title="Email">
+                <input type="text" required title="Email" name="email" id="txtEmail">
                 <label>Email</label>
             </div>
 
@@ -32,7 +34,7 @@
                 <span class="icon">
                     <ion-icon name="lock-closed"></ion-icon>
                 </span>
-                <input type="password" required placeholder="Mật khẩu" title="Mật khẩu">
+                <input type="password" id="password" required title="Mật khẩu" name="password">
                 <label>Mật khẩu</label>
             </div>
 
@@ -40,7 +42,7 @@
                 <span class="icon">
                     <ion-icon name="lock-closed"></ion-icon>
                 </span>
-                <input type="password" required placeholder="Xác nhận mật khẩu" title="Xác nhận mật khẩu">
+                <input type="password" id="confirm-password" required title="Xác nhận mật khẩu">
                 <label>Xác nhận mật khẩu</label>
             </div>
 
@@ -51,16 +53,16 @@
                 <a href="#">Quên mật khẩu</a>
             </div> -->
 
-            <button type="submit">Đăng Ký</button>
+            <button type="submit" id="btn-register">Đăng Ký</button>
 
             <div class="register-link">
-                <p>Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
+                <p>Đã có tài khoản? <a href="login.php">Đăng nhập</a></p>
             </div>
         </form>
     </div>
     
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
+    <script src="../script/register.js" type="module"></script>
 </body>
 </html>

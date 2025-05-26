@@ -39,7 +39,9 @@ h2{
     margin: 30px 0;
     border-bottom: 2px solid #fff;
 }
-
+button:hover{
+    background: #d94f7f;
+}
 .input-box label{
     position: absolute;
     left: 5px;
