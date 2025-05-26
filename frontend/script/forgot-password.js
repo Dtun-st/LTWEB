@@ -22,32 +22,7 @@ btnSendCode.addEventListener('click', function (e) {
     txtEmail.focus();
     return;
   }
-  //nút gửi mã đếm ngược 2p 
-  let countdown = 120; 
-  btnSendCode.disabled = true;
-  btnSendCode.classList.add('cooldown'); 
-
-  const originalText = 'Gửi mã';
-
-  const formatTime = (seconds) => {
-    const m = Math.floor(seconds / 60);
-    const s = seconds % 60;
-    return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
-  };
-
-  btnSendCode.textContent = `${originalText} (${formatTime(countdown)})`;
-
-  const interval = setInterval(() => {
-    countdown--;
-    if (countdown > 0) {
-      btnSendCode.textContent = `${originalText} (${formatTime(countdown)})`;
-    } else {
-      clearInterval(interval);
-      btnSendCode.disabled = false;
-      btnSendCode.classList.remove('cooldown'); // bỏ class khi xong
-      btnSendCode.textContent = originalText;
-    }
-  }, 1000);
+  
 
   //fetch send-code.php để gửi mã qua email
   var formData=new FormData(form);
@@ -59,6 +34,33 @@ btnSendCode.addEventListener('click', function (e) {
   .then(res => res.json())
   .then(data => {
       if (data.success) {
+        //khi gửi mã thành công mới đếm ngược
+        let countdown = 120; 
+        btnSendCode.disabled = true;
+        btnSendCode.classList.add('cooldown'); 
+
+        const originalText = 'Gửi mã';
+
+        const formatTime = (seconds) => {
+          const m = Math.floor(seconds / 60);
+          const s = seconds % 60;
+          return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+        };
+
+        btnSendCode.textContent = `${originalText} (${formatTime(countdown)})`;
+
+        const interval = setInterval(() => {
+          countdown--;
+          if (countdown > 0) {
+            btnSendCode.textContent = `${originalText} (${formatTime(countdown)})`;
+          } else {
+            clearInterval(interval);
+            btnSendCode.disabled = false;
+            btnSendCode.classList.remove('cooldown'); // bỏ class khi xong
+            btnSendCode.textContent = originalText;
+          }
+        }, 1000);
+
         showToast(data.message,'success');
       } else{
           showToast(data.message,'error');
