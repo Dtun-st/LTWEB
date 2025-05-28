@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+}
+
+h2 {
+    color: #007BFF;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input, select, button {
+    padding: 8px;
+    margin-right: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 15px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.pagination {
+    margin-top: 20px;
+}
+
+.pagination a {
+    padding: 6px 10px;
+    margin: 0 2px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.pagination a.active {
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+}
+
+.top-bar {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+img {
+    max-width: 60px;
+    height: auto;
+}
