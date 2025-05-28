@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thanh Toán</title>
-  <link rel="stylesheet" href="../css/thanhtoan.css">
-
+<link rel="stylesheet" href="../css/thanhtoan.css">
 </head>
 <body>
   <div class="giaodienThanhToan">
@@ -22,7 +21,8 @@
     </div>
 
     <!-- ✅ Chỉ giữ 1 form thôi -->
-    <form id="paymentForm">
+   <form id="paymentForm" action="/LTWEB/backend/process_payment.php" method="POST">
+    </form>
       <div class="form-group">
         <label for="fullName">Họ và tên</label>
         <input type="text" id="fullName" name="fullName" required>
@@ -46,6 +46,8 @@
       <button type="submit" class="btn-submit">Thanh toán</button>
     </form>
   </div>
+  
 
-  <script src="../js/thanhtoan.js"></script>
+
+<script src="thanhtoan.js"></script>
 </body>
