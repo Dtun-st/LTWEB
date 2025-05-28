@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Thêm sản phẩm</title>
+  <link rel="stylesheet" href="../css/add-product.css">
+</head>
+<body>
+  <div class="add-product-container">
+    <h2>Thêm sản phẩm mới</h2>
+    <form id="productForm">
+      <div class="form-group">
+        <label for="productName">Tên sản phẩm</label>
+        <input type="text" id="productName" required>
+      </div>
+      <div class="form-group">
+        <label for="price">Giá (VNĐ)</label>
+        <input type="number" id="price" required>
+      </div>
+      <div class="form-group">
+        <label for="imageUrl">Ảnh (URL)</label>
+        <input type="text" id="imageUrl">
+      </div>
+      <div class="form-group">
+        <label for="description">Mô tả</label>
+        <textarea id="description" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Thêm sản phẩm</button>
+    </form>
+
+    <div id="productPreview" class="preview-area"></div>
+  </div>
+
+  <script src="../js/add-product.js"></script>
+</body>
+</html>
